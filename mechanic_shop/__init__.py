@@ -21,6 +21,10 @@ swagger_template = {
         "description": "API for managing customers, mechanics, service tickets, and inventory.",
         "version": "1.0"
     },
+    # host is the base URL of the live API with no protocol prefix.
+    # schemes tells Swagger to send its requests over https, which Render requires.
+    "host": "mechanic-shop-api-p4.onrender.com",
+    "schemes": ["https"],
     "securityDefinitions": {
         "Bearer": {
             "type": "apiKey",
