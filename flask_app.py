@@ -1,11 +1,9 @@
 from mechanic_shop import create_app
+from mechanic_shop import db
 
-app = create_app()
+# Production config reads the database URI and secret key from environment
+# variables supplied by Render.
+app = create_app('config.ProductionConfig')
 
 with app.app_context():
-    from mechanic_shop import db
     db.create_all()
-    print("Tables created.")
-
-if __name__ == '__main__':
-    app.run(debug=True)
